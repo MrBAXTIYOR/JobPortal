@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPin, Bookmark } from 'lucide-react';
 
 interface JobCardProps {
@@ -17,7 +16,7 @@ const JobCard = ({ title, company, location, salary, type }: JobCardProps) => {
   };
 
   return (
-    <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow">
+    <div className="bg-white p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow cursor-pointer">
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-start gap-3 sm:gap-4">
           <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 rounded-lg flex items-center justify-center flex-shrink-0">

@@ -8,7 +8,12 @@ interface JobSearchProps {
   setLocation: (location: string) => void;
 }
 
-function JobSearch({ searchQuery, setSearchQuery, location, setLocation }: JobSearchProps) {
+function JobSearch({
+  searchQuery,
+  setSearchQuery,
+  location,
+  setLocation,
+}: JobSearchProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Searching for:', { searchQuery, location });
@@ -23,7 +28,7 @@ function JobSearch({ searchQuery, setSearchQuery, location, setLocation }: JobSe
           placeholder="Job title, keyword..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+          className="w-full pl-10 pr-4 py-2.5 rounded-lg border   outline-none"
         />
       </div>
       <div className="flex-1 relative">
@@ -33,7 +38,7 @@ function JobSearch({ searchQuery, setSearchQuery, location, setLocation }: JobSe
           placeholder="Your location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+          className="w-full pl-10 pr-4 py-2.5 rounded-lg border    outline-none"
         />
       </div>
       <button
