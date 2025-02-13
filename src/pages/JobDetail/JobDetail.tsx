@@ -8,8 +8,18 @@ import {
   Copy,
   Linkedin,
   Mail,
+  AlignLeft,
+  List,
+  Link,
+  Underline,
+  Italic,
+  Bold,
 } from 'lucide-react';
+import { useModal } from '../../context/ModalContext';
+import Modal from '../../components/Modal/Modal';
 const JobDetail = () => {
+  const { openModal } = useModal();
+
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="py-4 px-6 border-b bg-white">
@@ -49,7 +59,10 @@ const JobDetail = () => {
                       <button className="text-blue-600 border border-blue-600 px-4 py-2 rounded-lg">
                         Save
                       </button>
-                      <button className="bg-blue-600 text-white px-6 py-2 rounded-lg">
+                      <button
+                        onClick={openModal}
+                        className="bg-blue-600 text-white px-6 py-2 rounded-lg"
+                      >
                         Apply Now
                       </button>
                     </div>
@@ -223,6 +236,76 @@ const JobDetail = () => {
           </div>
         </div>
       </main>
+      <Modal>
+        <div className="p-4 pb-2">
+          <h2 className="text-xl font-semibold">
+            Apply Job: Senior UX Designer
+          </h2>
+        </div>
+
+        <div className="p-6 pt-0 space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Choose Resume
+            </label>
+            <div className="relative">
+              <select
+                className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 rounded-md"
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select...
+                </option>
+                <option value="resume1">My Resume 1</option>
+                <option value="resume2">My Resume 2</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Cover Letter
+            </label>
+            <div className="border border-gray-300 rounded-md overflow-hidden">
+              <div className="flex items-center gap-1 border-b border-gray-300 p-2 bg-gray-50">
+                <button className="p-1.5 hover:bg-gray-200 rounded">
+                  <Bold size={16} />
+                </button>
+                <button className="p-1.5 hover:bg-gray-200 rounded">
+                  <Italic size={16} />
+                </button>
+                <button className="p-1.5 hover:bg-gray-200 rounded">
+                  <Underline size={16} />
+                </button>
+                <div className="w-px h-5 bg-gray-300 mx-1" />
+                <button className="p-1.5 hover:bg-gray-200 rounded">
+                  <Link size={16} />
+                </button>
+                <button className="p-1.5 hover:bg-gray-200 rounded">
+                  <List size={16} />
+                </button>
+                <button className="p-1.5 hover:bg-gray-200 rounded">
+                  <AlignLeft size={16} />
+                </button>
+              </div>
+              <textarea
+                className="w-full p-3 min-h-[200px] focus:outline-none"
+                placeholder="Write down your biography here. Let the employers know who you are..."
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="p-6 pt-0 flex justify-end gap-3">
+          <button className="px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200">
+            Cancel
+          </button>
+          <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 flex items-center">
+            Apply Now
+            <span className="ml-2">→</span>
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 };

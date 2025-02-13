@@ -1,6 +1,7 @@
 import { Briefcase, Facebook, Youtube, Instagram, Twitter } from 'lucide-react';
 import Container from '../../../container/Container';
 import { footerLinks } from '../../../data/footerLinks';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -28,12 +29,12 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {links.map((link) => (
                     <li key={link}>
-                      <a
-                        href="#"
+                      <Link
+                        to={link}
                         className="hover:text-white transition-colors"
                       >
                         {link}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

@@ -15,6 +15,15 @@ import FindEmployers from './pages/FindEmployers/FindEmployers';
 import EmployersDetail from './pages/EmployersDetail/EmployersDetail';
 import ForgotPassword from './pages/Auth/ForgetPassword/ForgetPassword';
 import EmailVerification from './pages/Auth/Verification/EmailVerification';
+import AccountSetup from './pages/AccountSetup/AccountSetup';
+import FinishedInfo from './pages/AccountSetup/Components/FinishedInfo';
+import Blog from './pages/Blog/Blog';
+import BlogDetail from './pages/BlogDetail/BlogDetail';
+import NotFound from './pages/NotFount/NotFound';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
+import Faqs from './pages/Faqs/Faqs';
+import Filter from './components/Filter/Filter';
 
 const App = () => {
   return (
@@ -35,11 +44,20 @@ const App = () => {
           <Route path="/find-job/detail" element={<JobDetail />} />
           <Route path="/find-employers" element={<FindEmployers />} />
           <Route path="/find-employers/detail" element={<EmployersDetail />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/detail" element={<BlogDetail />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/FAQs" element={<Faqs />} />
         </Route>
-
+        <Route path="/account-setup" element={<AccountSetup />} />
+        <Route path="/account-setup/messege" element={<FinishedInfo />} />
+        <Route path="/filter" element={<Filter />} />
         <Route element={<Dashboard />}>
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard/:name" element={<DashboardPage />} />
         </Route>
+        <Route path="/notFound" element={<NotFound />} />
       </Routes>
     </>
   );
